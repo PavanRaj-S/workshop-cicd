@@ -13,13 +13,14 @@ table Sales
 		formatString: $ #,##0
 		lineageTag: a8e95485-02a2-4525-b02a-b2418fbdbe4c
 
-measure 'Sales Qty (LY)' = CALCULATE([Sales Qty], SAMEPERIODLASTYEAR('Calendar'[Date]))
+	measure 'Sales Qty (LY)' = CALCULATE([Sales Qty], SAMEPERIODLASTYEAR('Calendar'[Date]))
 		formatString: #,##0
 		lineageTag: 019cddab-955e-72e4-afbd-612d555de377
 
 	measure 'Sales Amount Avg per Day' = AVERAGEX(VALUES('Calendar'[Date]), [Sales Amount])
 		formatString: $ #,##0
 		lineageTag: 65842ce7-7176-4106-868e-2e83aaa62b4c
+
 
 	measure Margin =
 			SUMX (
